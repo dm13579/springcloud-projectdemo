@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: usercenter
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+        shared-configs:
+          - dataId: db-common.yml
+            group: "DEFAULT_GROUP"
+            refresh: true
+          - dataId: nacos.yml
+            group: "DEFAULT_GROUP"
+            refresh: true
+logging:
+  level:
+    com:
+     alibaba:
+      cloud:
+        nacos:
+          client: warn

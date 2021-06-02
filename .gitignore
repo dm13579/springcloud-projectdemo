@@ -1,0 +1,7 @@
+# Project exclude paths
+/projectdemo-common/target/
+/projectdemo-entity/target/
+/projectdemo-feign-api/projectdemo-feign-api-user/target/
+/projectdemo-gateway/target/
+/projectdemo-service/projectdemo-user/target/
+/projectdemo-service/projectdemo-usercenter/target/
