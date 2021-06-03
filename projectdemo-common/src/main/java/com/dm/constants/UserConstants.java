@@ -79,5 +79,5 @@ public class UserConstants {
      */
     public static final String CLIENT_SECRET = "test";
 
-    public static final String TOKEN_HEAD = "bearer"
+    public static final String TOKEN_HEAD = "bearer";
 }
