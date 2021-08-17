@@ -22,7 +22,6 @@
         <module>projectdemo-gateway</module>
         <module>projectdemo-feign-api</module>
         <module>projectdemo-service</module>
-        <module>projectdemo-entity</module>
     </modules>
 
     <properties>
@@ -52,23 +51,52 @@
             <!-- 本地项目 -->
             <dependency>
                 <groupId>com.dm</groupId>
-                <artifactId>projectdemo-common</artifactId>
+                <artifactId>projectdemo-common-redis</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.dm</groupId>
-                <artifactId>projectdemo-entity</artifactId>
+                <artifactId>projectdemo-common-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.dm</groupId>
+                <artifactId>projectdemo-common-mysql</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dm</groupId>
+                <artifactId>projectdemo-common-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dm</groupId>
+                <artifactId>projectdemo-common-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dm</groupId>
+                <artifactId>projectdemo-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dm</groupId>
+                <artifactId>projectdemo-common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.dm</groupId>
                 <artifactId>projectdemo-feign-api-user</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
-            <!-- springboot相关 -->
 
             <!-- springcloud相关 -->
             <dependency>

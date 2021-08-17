@@ -12,18 +12,12 @@
     <artifactId>projectdemo-service</artifactId>
     <packaging>pom</packaging>
 
-    <name>服务</name>
     <description>服务</description>
 
     <modules>
         <module>projectdemo-usercenter</module>
         <module>projectdemo-user</module>
+        <module>projectdemo-springcloudstream</module>
     </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.dm</groupId>
-            <artifactId>projectdemo-common</artifactId>
-        </dependency>
-    </dependencies>
 </project>

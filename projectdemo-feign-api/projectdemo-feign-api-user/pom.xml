@@ -12,7 +12,6 @@
   <artifactId>projectdemo-feign-api-user</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>用户服务FeignApi接口</name>
   <description>用户服务FeignApi接口</description>
 
   <dependencies>

@@ -1,4 +1,4 @@
-// TODO 引入Sentinel后加入，捕获Sentinel异常返回
+package com.dm.exception;// TODO 引入Sentinel后加入，捕获Sentinel异常返回
 //package com.dm.exception;
 //
 //import com.alibaba.fastjson.JSON;

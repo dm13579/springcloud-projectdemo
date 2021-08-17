@@ -11,7 +11,6 @@
 
     <artifactId>projectdemo-gateway</artifactId>
     <packaging>jar</packaging>
-    <name>网关服务</name>
     <description>网关服务</description>
 
     <dependencies>
@@ -39,22 +38,26 @@
         </dependency>
 
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+
+        <!-- swagger ui -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>${knife4j-swagger.version}</version>
+        </dependency>
+
+        <!-- common -->
+        <dependency>
             <groupId>com.dm</groupId>
-            <artifactId>projectdemo-common</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba</groupId>
-                    <artifactId>druid-spring-boot-starter</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.github.pagehelper</groupId>
-                    <artifactId>pagehelper-spring-boot-starter</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>tk.mybatis</groupId>
-                    <artifactId>mapper-spring-boot-starter</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>projectdemo-common-core</artifactId>
         </dependency>
     </dependencies>
 

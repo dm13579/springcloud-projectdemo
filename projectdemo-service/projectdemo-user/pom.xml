@@ -11,34 +11,9 @@
 
     <artifactId>projectdemo-user</artifactId>
 
-    <name>用户服务</name>
     <description>用户服务</description>
 
     <dependencies>
-
-        <!-- springboot 容器 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- 替换tomcat内置容器，undertow容器-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
 
         <!-- nacos -->
         <dependency>
@@ -50,41 +25,16 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
-
-        <!-- MyBatis相关 -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <!-- feign相关 -->
+        <!-- api -->
         <dependency>
             <groupId>com.dm</groupId>
             <artifactId>projectdemo-feign-api-user</artifactId>
         </dependency>
 
+        <!-- common -->
         <dependency>
             <groupId>com.dm</groupId>
-            <artifactId>projectdemo-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.dm</groupId>
-            <artifactId>projectdemo-entity</artifactId>
+            <artifactId>projectdemo-common-service</artifactId>
         </dependency>
     </dependencies>
 

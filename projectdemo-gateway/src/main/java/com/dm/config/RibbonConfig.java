@@ -1,8 +1,10 @@
 package com.dm.config;
 
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /**
   *                  ,;,,;
@@ -25,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
 public class RibbonConfig {
 
     @Bean
-    public MyRestTemplate restTemplate(DiscoveryClient discoveryClient) {
+    public RestTemplate restTemplate(DiscoveryClient discoveryClient) {
         return new MyRestTemplate(discoveryClient);
     }
 }

@@ -1,7 +1,7 @@
 package com.dm.utils;
 
-import com.dm.enums.ResultCode;
 import com.dm.exception.GateWayException;
+import com.dm.result.ResultCode;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwsHeader;
 import io.jsonwebtoken.Jwt;

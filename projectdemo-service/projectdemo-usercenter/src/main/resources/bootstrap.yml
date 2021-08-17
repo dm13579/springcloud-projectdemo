@@ -1,18 +1,22 @@
+server:
+  port: 9999
+
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
-    name: usercenter
+    name: usercenter-service
   profiles:
     active: dev
   cloud:
     nacos:
+      discovery:
+        server-addr: localhost:8848
       config:
         server-addr: localhost:8848
         file-extension: yml
         shared-configs:
-          - dataId: db-common.yml
-            group: "DEFAULT_GROUP"
-            refresh: true
-          - dataId: nacos.yml
+          - dataId: common-db.yml
             group: "DEFAULT_GROUP"
             refresh: true
 logging:
@@ -22,3 +26,9 @@ logging:
       cloud:
         nacos:
           client: warn
+
+jwt:
+  keyPairName: jwt.jks
+  keyPairAlias: jwt
+  keyPairSecret: 123456
+  keyPairStoreSecret: 123456

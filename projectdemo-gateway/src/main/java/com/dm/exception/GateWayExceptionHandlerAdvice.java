@@ -1,7 +1,6 @@
 package com.dm.exception;
 
-
-import com.dm.entity.CommonResult;
+import com.dm.base.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
