@@ -1,6 +1,6 @@
 package com.dm.config;
 
-import com.dm.entity.MyUserDetailsEntity;
+import com.dm.service.MyUserDetailsEntity;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

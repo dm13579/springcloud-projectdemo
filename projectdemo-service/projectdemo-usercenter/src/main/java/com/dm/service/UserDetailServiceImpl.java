@@ -1,8 +1,9 @@
 package com.dm.service;
 
-import com.dm.entity.MyUserDetailsEntity;
-import com.dm.po.User;
-import com.dm.mapper.UserMapper;
+import com.dm.api.UserInfoFeignApi;
+import com.dm.base.CommonResult;
+import com.dm.entity.po.User;
+import com.dm.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -35,7 +36,7 @@ import java.util.Optional;
 public class UserDetailServiceImpl implements UserDetailsService {
 
     @Resource
-    private UserMapper userMapper;
+    private UserInfoFeignApi userInfoFeignApi;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -43,7 +44,14 @@ public class UserDetailServiceImpl implements UserDetailsService {
             log.warn("用户登陆用户名为空:{}", username);
             throw new UsernameNotFoundException("用户名不能为空");
         }
-        User user = userMapper.selectOne(User.builder().name(username).build());
+        CommonResult<User> commonResult = new CommonResult<>();
+        try {
+            commonResult = userInfoFeignApi.getInfoByName(username);
+        }catch (BusinessException e){
+            log.warn("远程调用,业务异常:{}", commonResult.getMessage());
+            throw new UsernameNotFoundException("业务异常");
+        }
+        User user = commonResult.getData();
         if (!Optional.ofNullable(user).isPresent()) {
             log.warn("根据用户名没有查询到对应的用户信息:{}", username);
             throw new UsernameNotFoundException("用户不存在");

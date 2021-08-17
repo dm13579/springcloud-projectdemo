@@ -2,9 +2,9 @@ package com.dm.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.dm.config.MyRestTemplate;
-import com.dm.enums.ResultCode;
 import com.dm.exception.GateWayException;
 import com.dm.properties.NotAuthUrlProperties;
+import com.dm.result.ResultCode;
 import com.dm.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import lombok.SneakyThrows;
@@ -18,6 +18,7 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 import org.springframework.util.StringUtils;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 

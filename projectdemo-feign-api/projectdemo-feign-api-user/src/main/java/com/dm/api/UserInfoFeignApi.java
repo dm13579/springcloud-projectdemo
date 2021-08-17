@@ -1,11 +1,13 @@
 package com.dm.api;
 
-import com.dm.bo.RegisterBo;
-import com.dm.entity.CommonResult;
+import com.dm.base.CommonResult;
+import com.dm.entity.po.User;
 import com.dm.exception.BusinessException;
-import com.dm.po.User;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
   *                  ,;,,;
@@ -30,4 +32,7 @@ public interface UserInfoFeignApi {
 
     @RequestMapping(value = "/getInfo", method = RequestMethod.GET)
     CommonResult<User> getInfo(@RequestParam("id") String id) throws BusinessException;
+
+    @RequestMapping(value = "/getInfoByName", method = RequestMethod.GET)
+    CommonResult<User> getInfoByName(@RequestParam("name") String name) throws BusinessException;
 }

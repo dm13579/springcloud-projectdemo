@@ -1,13 +1,14 @@
 package com.dm.service.impl;
 
 import com.dm.base.BaseServiceImpl;
-import com.dm.bo.RegisterBo;
+import com.dm.base.CommonResult;
 import com.dm.constants.UserConstants;
-import com.dm.entity.CommonResult;
+import com.dm.dao.entity.UserEntity;
 import com.dm.entity.TokenInfo;
+import com.dm.entity.bo.RegisterBo;
+import com.dm.entity.po.User;
 import com.dm.exception.BusinessException;
-import com.dm.mapper.UserMapper;
-import com.dm.po.User;
+import com.dm.dao.mapper.UserMapper;
 import com.dm.service.RedisService;
 import com.dm.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +43,7 @@ import java.util.Random;
   **/
 @Service
 @Slf4j
-public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<UserMapper, UserEntity> implements UserService {
 
     @Resource
     private RestTemplate restTemplate;
@@ -84,14 +85,14 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
             TokenInfo tokenInfo = responseEntity.getBody();
             if (tokenInfo == null) {
                 log.error("未获取到token");
-                throw new BusinessException("未获取到token")
+                throw new BusinessException("未获取到token");
             }
             String newAccessToken = tokenInfo.getAccess_token();
             log.info("通过RefreshToken:{}刷新令牌成功accessToken:{}", jwtTokenValue, newAccessToken);
             return newAccessToken;
         } catch (Exception e) {
             log.error("通过RefreshToken:{}刷新令牌失败:{}", jwtTokenValue, e.getMessage());
-            throw new BusinessException("刷新令牌失败")
+            throw new BusinessException("刷新令牌失败");
         }
     }
 
@@ -114,19 +115,35 @@ public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implement
             throw new BusinessException("验证码错误");
         }
         // 2,检验用户是否存在（这里是用户名和手机号联合，也就是说一个手机号可重复注册的）
-        List<User> userList = mapper.select(User.builder().name(registerBean.getName()).phone(registerBean.getPhone()).build());
+        List<UserEntity> userList = mapper.select(UserEntity.builder().name(registerBean.getName()).phone(registerBean.getPhone()).build());
         if (!CollectionUtils.isEmpty(userList)) {
             throw new BusinessException("用户已存在不可重复注册");
         }
         // 3,检验基本信息
 
         // 4,创建用户
-        User user = User.builder()
+        UserEntity userEntity = UserEntity.builder()
                 .name(registerBean.getName())
                 .phone(registerBean.getPhone())
                 .build();
-        mapper.insertSelective(user);
-        return CommonResult.success(user);
+        mapper.insertSelective(userEntity);
+
+
+        return CommonResult.success(User.builder()
+                .name(registerBean.getName())
+                .phone(registerBean.getPhone())
+                .build());
+    }
+
+    @Override
+    public User getInfoByName(String name) {
+        UserEntity userEntity = mapper.selectOne(UserEntity.builder().name(name).build());
+        return User.builder()
+                .Id(userEntity.getId())
+                .nickname(userEntity.getNickname())
+                .password(userEntity.getPassword())
+                .name(userEntity.getName())
+                .status(userEntity.getStatus()).build();
     }
 
     /**

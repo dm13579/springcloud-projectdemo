@@ -1,9 +1,4 @@
-server:
-  port: 8888
-
 spring:
-  application:
-    name: gateway
   cloud:
     gateway:
       discovery:
@@ -12,14 +7,9 @@ spring:
           enabled: true
       routes:
         - id: user-service
-          uri: lb://user-service
+          uri: lb://user-com.dm.service
           predicates:
             - Path=/user/**,/userinfo/**
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-mybatis:
-  mapper-locations: classpath*:com/**/mapper/*.xml
 
 gateway:
   shouldSkipUrls:

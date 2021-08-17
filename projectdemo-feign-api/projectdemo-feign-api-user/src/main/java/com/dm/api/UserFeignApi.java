@@ -1,10 +1,10 @@
 package com.dm.api;
 
-import com.dm.bo.RegisterBo;
-import com.dm.entity.CommonResult;
+import com.dm.base.CommonResult;
 import com.dm.entity.TokenInfo;
+import com.dm.entity.bo.RegisterBo;
+import com.dm.entity.po.User;
 import com.dm.exception.BusinessException;
-import com.dm.po.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

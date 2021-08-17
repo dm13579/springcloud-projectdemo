@@ -1,11 +1,12 @@
 package com.dm.service;
 
 import com.dm.base.BaseService;
-import com.dm.bo.RegisterBo;
-import com.dm.entity.CommonResult;
+import com.dm.base.CommonResult;
+import com.dm.dao.entity.UserEntity;
 import com.dm.entity.TokenInfo;
+import com.dm.entity.bo.RegisterBo;
+import com.dm.entity.po.User;
 import com.dm.exception.BusinessException;
-import com.dm.po.User;
 
 /**
   *                  ,;,,;
@@ -24,7 +25,7 @@ import com.dm.po.User;
   *@slogan: 我自横刀向天笑，笑完我就去睡觉
   *@version 1.0
   **/
-public interface UserService extends BaseService<User> {
+public interface UserService extends BaseService<UserEntity> {
 
     /**
      * 登录
@@ -55,4 +56,5 @@ public interface UserService extends BaseService<User> {
     CommonResult<User> register(RegisterBo registerBo) throws BusinessException;
 
 
+    User getInfoByName(String name);
 }

@@ -12,7 +12,6 @@
     <artifactId>projectdemo-feign-api</artifactId>
     <packaging>pom</packaging>
 
-    <name>Feign调用API</name>
     <description>Feign调用API</description>
     <modules>
         <module>projectdemo-feign-api-user</module>
@@ -26,7 +25,19 @@
 
         <dependency>
             <groupId>com.dm</groupId>
-            <artifactId>projectdemo-entity</artifactId>
+            <artifactId>projectdemo-common-core</artifactId>
+        </dependency>
+
+        <!-- swagger 相关 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>${knife4j-swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -2,6 +2,7 @@ package com.dm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
   *                  ,;,,;
@@ -20,6 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   *@slogan: 我自横刀向天笑，笑完我就去睡觉
   *@version 1.0
   **/
+@EnableFeignClients
 @SpringBootApplication
 public class UsercenterApplication {
     public static void main(String[] args) {
