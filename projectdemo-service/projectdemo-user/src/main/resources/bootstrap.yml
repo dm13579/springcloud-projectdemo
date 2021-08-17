@@ -1,6 +1,5 @@
 server:
   port: 7777
-
 spring:
   application:
     name: user-service

@@ -6,6 +6,7 @@ import com.dm.dao.entity.UserEntity;
 import com.dm.entity.po.User;
 import com.dm.exception.BusinessException;
 import com.dm.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +30,7 @@ import javax.annotation.Resource;
  * @date 2021/6/1 17:09
  * @slogan: 我自横刀向天笑，笑完我就去睡觉
  **/
+@Api(value = "用户管理", tags = "UserController")
 @RestController
 @RequestMapping("/user")
 public class UserInfoController implements UserInfoFeignApi {

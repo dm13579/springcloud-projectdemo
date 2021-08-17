@@ -62,5 +62,10 @@
             <groupId>com.dm</groupId>
             <artifactId>projectdemo-common-redis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.dm</groupId>
+            <artifactId>projectdemo-common-swagger</artifactId>
+        </dependency>
     </dependencies>
 </project>

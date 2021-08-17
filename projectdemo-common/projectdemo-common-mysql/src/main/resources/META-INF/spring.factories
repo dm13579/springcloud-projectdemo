@@ -1,1 +1,1 @@
-#org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dm.config.MyBatisConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.dm.config.MyBatisConfig

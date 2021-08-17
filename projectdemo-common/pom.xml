@@ -23,5 +23,6 @@
         <module>projectdemo-common-service</module>
         <module>projectdemo-common-starter</module>
         <module>projectdemo-common-log</module>
+        <module>projectdemo-common-swagger</module>
     </modules>
 </project>

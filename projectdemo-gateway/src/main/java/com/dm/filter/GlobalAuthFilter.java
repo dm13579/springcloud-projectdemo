@@ -45,7 +45,7 @@ import java.util.Optional;
   *@version 1.0
   **/
 @Slf4j
-@Configuration
+//@Configuration
 public class GlobalAuthFilter implements GlobalFilter, InitializingBean, Ordered {
 
     @Resource
