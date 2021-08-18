@@ -16,7 +16,7 @@ spring:
         file-extension: yml
         shared-configs:
           - dataId: common-db.yml
-            group: "DEFAULT_GROUP"
+            group: "PROJECTDEMO"
             refresh: true
 logging:
   level:
