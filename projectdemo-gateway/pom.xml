@@ -14,7 +14,6 @@
     <description>网关服务</description>
 
     <dependencies>
-
         <!-- 网关 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -42,11 +41,27 @@
             <groupId>com.dm</groupId>
             <artifactId>projectdemo-common-core</artifactId>
         </dependency>
-        
+
         <!-- swagger ui -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Sentinel -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!-- Sentinel规则持久化至Nacos配置 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
     </dependencies>
 
