@@ -18,7 +18,6 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 import org.springframework.util.StringUtils;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -45,7 +44,7 @@ import java.util.Optional;
   *@version 1.0
   **/
 @Slf4j
-//@Configuration
+@Configuration
 public class GlobalAuthFilter implements GlobalFilter, InitializingBean, Ordered {
 
     @Resource

@@ -1,3 +1,15 @@
+## 项目技术栈
+```java
+注册中心/配置中心：Nacos
+网关：SpringCloud Gateway
+安全框架：Spring Security,Spring Cloud Oauth2
+限流组件：Sentinel
+Rpc远程调用：Ribbon,OpenFeign
+持久层层：MySQL,Redis,MyBatis,PageHelper
+数据库连接池：Alibaba Druid
+日志管理：Logback,Logstash
+```
+
 ## 目录结构
 ```java
 ├─springcloud-projectdemo----------------------------父项目，公共依赖
