@@ -64,6 +64,15 @@ public class CommonResult<T> {
     /**
      * 失败返回结果
      *
+     * @param resultCode 提示信息
+     */
+    public static <T> CommonResult<T> failed(ResultCode resultCode) {
+        return new CommonResult<>(resultCode.getTypeValue(), resultCode.getTypeName(), null);
+    }
+
+    /**
+     * 失败返回结果
+     *
      * @param message 提示信息
      */
     public static <T> CommonResult<T> failed(String message) {

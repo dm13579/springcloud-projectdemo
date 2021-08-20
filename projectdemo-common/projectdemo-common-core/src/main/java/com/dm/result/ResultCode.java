@@ -64,6 +64,16 @@ public enum ResultCode implements EnumType {
      * 请求头中的token为空
      */
     AUTHORIZATION_HEADER_IS_EMPTY(600,"请求头中的token为空"),
+
+    /**
+     * 流控
+     */
+    TOMANY_REQUEST_ERROR(701,"请求太多，扛不住啦"),
+
+    /**
+     * 降级
+     */
+    BACKGROUD_DEGRADE_ERROR(702,"系统繁忙"),
     ;
 
     /**
