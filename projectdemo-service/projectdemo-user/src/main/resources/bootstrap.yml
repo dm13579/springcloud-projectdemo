@@ -16,6 +16,10 @@ spring:
           - dataId: common-db.yml
             group: "PROJECTDEMO"
             refresh: true
+        extension-configs:
+          - dataId: ext-config.yml
+            group: "PROJECTDEMO"
+            refresh: true
 logging:
   level:
     com:
